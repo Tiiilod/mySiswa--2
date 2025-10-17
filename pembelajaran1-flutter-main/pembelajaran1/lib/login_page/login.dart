@@ -74,7 +74,7 @@ class _LoginState extends State<Login> {
                     if (username == widget.username && password == widget.password) {
                       Navigator.pushReplacement(
                         context,
-                        MaterialPageRoute(builder: (context) => Homepage(username: username)),
+                        MaterialPageRoute(builder: (context) => Homepage(username: widget.username)),
                       );
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(

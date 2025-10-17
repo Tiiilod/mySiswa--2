@@ -85,7 +85,10 @@ class _RegisterState extends State<Register> {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    
+                    Navigator.pushReplacement(
+                    context, 
+                    MaterialPageRoute(builder: (context) => Login(username: widget.username, password: widget.password,))
+                    );
                   },
                   child: Text(
                     "Register",
@@ -107,7 +110,7 @@ class _RegisterState extends State<Register> {
                 TextButton(onPressed: () {
                   Navigator.pushReplacement(
                     context, 
-                    MaterialPageRoute(builder: (context) => Login(username: widget.username, password: widget.password,))
+                    MaterialPageRoute(builder: (context) => Login(username: "admin", password: "12345",))
                     );
                 }, 
                 child: Text("Sign In"))

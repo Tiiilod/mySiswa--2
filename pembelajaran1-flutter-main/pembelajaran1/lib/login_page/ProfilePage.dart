@@ -1,91 +1,138 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-
-// class Profile extends StatelessWidget {
-//   const Profile({super.key});
-
+// import 'package:flutter/cupertino.dart';
+// import 'package:flutter/material.dart';
+// class ProfilePage extends StatelessWidget {
 //   @override
 //   Widget build(BuildContext context) {
-//   return Scaffold(
-      
-//       body: Padding(
-//         padding: const EdgeInsets.all(16.0),
-//         child: Center(
-//           child: Column(
-//             mainAxisAlignment: MainAxisAlignment.center,
-//             children: [
-//                Row(
-//               mainAxisAlignment: MainAxisAlignment.center, 
-//               children: [
-//                 Icon(Icons.person, size: 40),
-//                 SizedBox(width: 10),
-//                 Text(
-//                   'Fulan Bin Fulan',
-//                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+//     return Scaffold(
+//       backgroundColor: Colors.grey[200],
+//       appBar: AppBar(
+//         title: Text('Profil Pengguna'),
+//         centerTitle: true,
+//         backgroundColor: Colors.lightBlueAccent,
+//       ),
+//       body: SingleChildScrollView(
+//         padding: EdgeInsets.all(16.0),
+//         child: Column(
+//           children: [
+//             // Avatar dan Nama
+//             Card(
+//               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+//               elevation: 4,
+//               child: Padding(
+//                 padding: EdgeInsets.symmetric(vertical: 24.0, horizontal: 16.0),
+//                 child: Column(
+//                   children: [
+//                     CircleAvatar(
+//                     radius: 50,
+//                     backgroundImage: AssetImage('images/mySiswa.png'),
+//                     ),
+//                     SizedBox(height: 16),
+//                     Text(
+//                       'Fulan Bin Fulan',
+//                       style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+//                     ),
+//                     SizedBox(height: 4),
+//                     Text(
+//                       'ID: 1234567890',
+//                       style: TextStyle(fontSize: 14, color: Colors.grey[600]),
+//                     ),
+//                   ],
 //                 ),
-//               ],
+//               ),
 //             ),
 //             SizedBox(height: 20),
-//             Text(
-//               'Tanggal Lahir: 19/09/2002',
-//               style: TextStyle(fontSize: 18),
-//               textAlign: TextAlign.center,
+
+//             // Informasi Lain
+//             Card(
+//               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+//               elevation: 3,
+//               child: Padding(
+//                 padding: EdgeInsets.all(16.0),
+//                 child: Column(
+//                   children: [
+//                     _buildInfoRow('Tanggal Lahir', '19/09/2002'),
+//                     Divider(),
+//                     _buildInfoRow('Alamat', 'RT/RW: 02/08, Desa Rumpang'),
+//                     Divider(),
+//                     _buildInfoRow('Email', 'fulan@example.com'),
+//                     Divider(),
+//                     _buildInfoRow('Telepon', '+62 812 3456 7890'),
+//                   ],
+//                 ),
+//               ),
 //             ),
-//             SizedBox(height: 10),
-//             Text(
-//               'Alamat: RT/RW: 02/08, Desa Rumpang',
-//               style: TextStyle(fontSize: 18),
-//               textAlign: TextAlign.center, 
-//                    ),
-//             ],
-//           ),
+//           ],
 //         ),
 //       ),
-//       appBar: AppBar(automaticallyImplyLeading: false,
-//       title: Center(child: Text("Profile")),
-//     backgroundColor: Colors.lightBlueAccent,),
 //     );
-    
+//   }
+
+//   // Widget bantu untuk baris info
+//   Widget _buildInfoRow(String title, String value) {
+//     return Padding(
+//       padding: EdgeInsets.symmetric(vertical: 8.0),
+//       child: Row(
+//         crossAxisAlignment: CrossAxisAlignment.start,
+//         children: [
+//           Icon(Icons.info_outline, color: Colors.blueAccent),
+//           SizedBox(width: 10),
+//           Expanded(
+//             child: Column(
+//               crossAxisAlignment: CrossAxisAlignment.start,
+//               children: [
+//                 Text(
+//                   title,
+//                   style: TextStyle(fontWeight: FontWeight.bold),
+//                 ),
+//                 SizedBox(height: 4),
+//                 Text(value),
+//               ],
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
 //   }
 // }
 
 
-
-
-
+import 'package:flutter/material.dart';
+import 'package:pembelajaran1/login_page/logout.dart';
 
 class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        title: Text('Profil Pengguna'),
+        title: const Text('Profil Pengguna'),
         centerTitle: true,
         backgroundColor: Colors.lightBlueAccent,
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            // Avatar dan Nama
+            // 🧱 BAGIAN 1: Kartu Profil
             Card(
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
               elevation: 4,
               child: Padding(
-                padding: EdgeInsets.symmetric(vertical: 24.0, horizontal: 16.0),
+                padding: const EdgeInsets.symmetric(vertical: 24.0, horizontal: 16.0),
                 child: Column(
                   children: [
-                    CircleAvatar(
-                    radius: 50,
-                    backgroundImage: AssetImage('images/mySiswa.png'),
+                    const CircleAvatar(
+                      radius: 50,
+                      backgroundImage: AssetImage('images/mySiswa.png'),
                     ),
-                    SizedBox(height: 16),
-                    Text(
+                    const SizedBox(height: 16),
+                    const Text(
                       'Fulan Bin Fulan',
                       style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(height: 4),
+                    const SizedBox(height: 4),
                     Text(
                       'ID: 1234567890',
                       style: TextStyle(fontSize: 14, color: Colors.grey[600]),
@@ -94,24 +141,48 @@ class ProfilePage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20),
 
-            // Informasi Lain
+            const SizedBox(height: 20),
+
+            // 🧾 BAGIAN 2: Informasi Lain
             Card(
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
               elevation: 3,
               child: Padding(
-                padding: EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(16.0),
                 child: Column(
                   children: [
                     _buildInfoRow('Tanggal Lahir', '19/09/2002'),
-                    Divider(),
+                    const Divider(),
                     _buildInfoRow('Alamat', 'RT/RW: 02/08, Desa Rumpang'),
-                    Divider(),
+                    const Divider(),
                     _buildInfoRow('Email', 'fulan@example.com'),
-                    Divider(),
+                    const Divider(),
                     _buildInfoRow('Telepon', '+62 812 3456 7890'),
                   ],
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            // 🚪 BAGIAN 3: Tombol Logout
+            ElevatedButton.icon(
+              onPressed: () {
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => const LogoutPage()),
+                  (route) => false, // menghapus semua halaman sebelumnya
+                );
+              },
+              icon: const Icon(Icons.logout),
+              label: const Text("Logout"),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.redAccent,
+                foregroundColor: Colors.white,
+                padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
                 ),
               ),
             ),
@@ -121,24 +192,24 @@ class ProfilePage extends StatelessWidget {
     );
   }
 
-  // Widget bantu untuk baris info
+  // 🔹 Fungsi bantu untuk menampilkan baris info
   Widget _buildInfoRow(String title, String value) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 8.0),
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(Icons.info_outline, color: Colors.blueAccent),
-          SizedBox(width: 10),
+          const Icon(Icons.info_outline, color: Colors.blueAccent),
+          const SizedBox(width: 10),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   title,
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 4),
+                const SizedBox(height: 4),
                 Text(value),
               ],
             ),

@@ -156,8 +156,7 @@ class _HomepageState extends State<Homepage> {
     required List<Color> colors,
     required VoidCallback onTap,
   }) {
-    return InkWell(
-      borderRadius: BorderRadius.circular(20),
+    return GestureDetector(
       onTap: onTap,
       child: Container(
         height: 120,
