@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pembelajaran1/komponen/colors.dart';
 import 'DetailPage.dart'; // pastikan import file DetailPage
 
 class CatatanPage extends StatefulWidget {
@@ -77,7 +78,7 @@ class _CatatanPageState extends State<CatatanPage> {
                   height: 150,
                   width: double.infinity,
                   decoration: BoxDecoration(
-                    color: Colors.blue,
+                    color: AppColors.style2,
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Center(
@@ -98,7 +99,7 @@ class _CatatanPageState extends State<CatatanPage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _tambahCatatan,
-        backgroundColor: Colors.amber,
+        backgroundColor: AppColors.style4,
         child: const Icon(Icons.add),
       ),
     );

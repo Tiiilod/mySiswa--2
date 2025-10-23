@@ -6,6 +6,7 @@ import 'package:pembelajaran1/login_page/SchoolPage.dart';
 import 'package:pembelajaran1/login_page/TugasPage.dart';
 import 'package:pembelajaran1/login_page/inbox.dart';
 import 'package:pembelajaran1/login_page/ProfilePage.dart';
+import 'package:pembelajaran1/komponen/colors.dart';
 
 class Homepage extends StatefulWidget {
   final String username;
@@ -21,7 +22,7 @@ class _HomepageState extends State<Homepage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("mySiswa"),
-        backgroundColor: Colors.lightBlueAccent,
+        backgroundColor: AppColors.style1,
         actions: [
           IconButton(
             onPressed: () {
